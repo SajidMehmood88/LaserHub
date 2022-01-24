@@ -5,7 +5,7 @@
     </listeners>
     <test name="User login">
         <classes>
-            <class name="org.laserhub.scenario.ExampleTest"/>
+            <class name="org.laserhub.scenario.LoginTest"/>
         </classes>
     </test>
 </suite>

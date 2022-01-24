@@ -1,0 +1,12 @@
+# Created by .ignore support plugin (hsz.mobi)
+.gitignore
+compiler.xml
+encodings.xml
+jarRepositories.xml
+misc.xml
+uiDesigner.xml
+/reports/
+/.idea/
+
+laser_hub_automation_task.iml
+target/
