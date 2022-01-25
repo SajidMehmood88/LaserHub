@@ -58,13 +58,15 @@ public class BaseTest {
         return driver;
     }
 
-
-    public String getScreenShotPath(String testCaseName, WebDriver driver) throws IOException {
+    public String captureScreenShot(String testCaseName, WebDriver driver) {
+        String imageName = testCaseName + timestamp + ".png";
         TakesScreenshot screenshot = (TakesScreenshot) driver;
-        File source = screenshot.getScreenshotAs(OutputType.FILE);
-        String destinationFile = System.getProperty("user.dir") + "//reports//" + testCaseName + timestamp + ".png";
-        FileUtils.copyFile(source, new File(destinationFile));
-        return destinationFile;
-
+        File screenshotFile = screenshot.getScreenshotAs(OutputType.FILE);
+        File targetFile = new File(System.getProperty("user.dir") + "//reports//", imageName);
+        try {
+            FileUtils.copyFile(screenshotFile, targetFile);
+        } catch (IOException e) {
+        }
+        return targetFile.getName();
     }
 }
