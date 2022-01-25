@@ -32,7 +32,7 @@ public class LoginTest extends BaseTest {
         loginPage.enterPassword(password);
         loginPage.clickOnSubmitButton();
         chooseAccountPage.isCompanyChoosePageDisplayed();
-        String expectedUrl = "https://app.laserhub.com/register/company-choosee";
+        String expectedUrl = "https://app.laserhub.com/register/company-choose";
         String actualUrl = driver.getCurrentUrl();
         Assert.assertEquals(actualUrl, expectedUrl);
         log.info("Successfully logs in");
