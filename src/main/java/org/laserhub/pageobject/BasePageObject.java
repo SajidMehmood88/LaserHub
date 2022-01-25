@@ -17,9 +17,6 @@ public class BasePageObject {
         this.driver = driver;
     }
 
-    public WebElement getCookieBanner(){
-        return driver.findElement(cookieBanner);
-    }
 
     public void clickOnAcceptCookieBanner(){
         driver.findElement(acceptCookieBannerButton).click();
