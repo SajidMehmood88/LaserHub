@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.laserhub.pageobject.ChooseAccountPage;
 import org.laserhub.pageobject.LoginPage;
 import org.laserhub.resources.BaseTest;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -14,10 +15,12 @@ public class LoginTest extends BaseTest {
 
     private LoginPage loginPage;
     private ChooseAccountPage chooseAccountPage;
+    public WebDriver driver;
 
 
     @BeforeClass
     public void initialize() {
+        driver = getDriver();
         loginPage = new LoginPage(driver);
         chooseAccountPage = new ChooseAccountPage(driver);
         driver.get("https://app.laserhub.com/login");
@@ -29,7 +32,7 @@ public class LoginTest extends BaseTest {
         loginPage.enterPassword(password);
         loginPage.clickOnSubmitButton();
         chooseAccountPage.isCompanyChoosePageDisplayed();
-        String expectedUrl = "https://app.laserhub.com/register/company-choose";
+        String expectedUrl = "https://app.laserhub.com/register/company-choosee";
         String actualUrl = driver.getCurrentUrl();
         Assert.assertEquals(actualUrl, expectedUrl);
         log.info("Successfully logs in");

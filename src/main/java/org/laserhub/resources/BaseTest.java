@@ -21,6 +21,9 @@ public class BaseTest {
     private BasePageObject basePageObject;
 
 
+    public WebDriver getDriver(){
+        return this.driver;
+    }
 
     @BeforeSuite
     public void setup() throws IOException {
